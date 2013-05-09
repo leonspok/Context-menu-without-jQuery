@@ -52,4 +52,4 @@ function createItems() {
 
 **initMenu(parent)** - adds DOMObject of context menu into node parent.
 
-**showMenu(event, parent, [items])** - this method draws context menu on your page.
+**showMenu(event, parent[, items])** - this method draws context menu on your page.

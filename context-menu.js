@@ -43,8 +43,10 @@ function ContextMenu() {
 	};
 	
 	this.showMenu = function(event, parent, items) {
-		this.setItems(items);
-
+		if (items) {
+			this.setItems(items);
+		}
+			
 		event = event || window.event;
 		if (event.preventDefault) {
 			event.preventDefault();

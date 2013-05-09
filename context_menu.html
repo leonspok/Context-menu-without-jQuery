@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>ContextMenu test</title>
+		<script src="context-menu.js"></script>
+		<link rel="stylesheet" type="text/css" href="context-menu.css">
+	</head>
+	<body>
+		<script>
+			var getItems = function() {
+				var items = new Array();
+				for (var i = 0; i < 5; i++) {
+					items.push({"name": "item"+i, "action": function() { alert(this.name); }});
+				}
+				items.push({"name": "item5", "items": [{"name": "item51", "action": function() { alert("item51");}}, {"name": "item52", "action": function() { alert("item52");}}, {"name": "item53", "action": function() { alert("item53");}}]});
+				for (var i = 6; i < 10; i++) {
+					items.push({"name": "item"+i, "action": function() { alert(this.name); }});
+				}
+				return items;
+			}
+			var context_menu = new ContextMenu();
+		</script>
+		<div id="place" oncontextmenu="javascript: context_menu.showMenu(event, this, getItems());" style="width: 300px; height: 1300px; border: 1px solid black;"></div>
+	</body>
+</html>

@@ -6,7 +6,8 @@ var context_menu = new ContextMenu();
 ### Items types
 Every simple item in context menu should have:
 
-```item = {
+```
+item = {
 	"name": /*the name of context menu item*/,
 	"action": /*this method is called when click on this item*/
 };
@@ -14,7 +15,8 @@ Every simple item in context menu should have:
 
 Every submenu item should have:
 
-```item = {
+```
+item = {
 	"name": /*the name of submenu*/,
 	"items": /*an array of items (simple and submenus)*/
 };
@@ -22,14 +24,16 @@ Every submenu item should have:
 ### If you have permanent list of items.
 You can create array of items before using context menu. Then you should add it with method **setItems(items)**. For calling context menu:
 
-```<script> 
+```
+<script> 
 	var context_menu = new ContextMenu();
 	context_menu.setItems(items);
 </script>
 <div oncontextmenu="javascript: context_menu.showMenu(event, this);"></div>
 ```
 ### If you have to create items by calling context menu.
-```<script>
+```
+<script>
 function createItems() {
 	/*your code*/
 	return items;
